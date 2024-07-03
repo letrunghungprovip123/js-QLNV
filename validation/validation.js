@@ -1,3 +1,10 @@
+function countNonSpaceChars(str) {
+    // Loại bỏ tất cả các khoảng trắng
+    var stringWithoutSpaces = str.replace(/ /g, '');
+    // Độ dài của chuỗi đã loại bỏ khoảng trắng
+    return stringWithoutSpaces.length;
+}
+
 
 function checkEmptyValue(value,span){
     if(value){
@@ -13,7 +20,7 @@ function checkEmptyValue(value,span){
 
 
 function checkTKNhanVien(value,span){
-    if(value.length >= 4 && value.length <= 6){
+    if(countNonSpaceChars(value) >= 4 && countNonSpaceChars(value) <= 6){
         span.classList.remove("d-block")
         span.innerHTML = ""
         return true
