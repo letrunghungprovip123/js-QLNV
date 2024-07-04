@@ -54,7 +54,7 @@ function checkEmailNhanVien(value,span){
 }
 
 function checkMatKhauNhanVien(value,span){
-    if(value.length <= 6 || value.length >=10){
+    if(value.length < 6 || value.length > 10){
         span.classList.add("d-block")
         span.innerHTML = "Nhập từ 6 đến 10 kí tự"
         return false
